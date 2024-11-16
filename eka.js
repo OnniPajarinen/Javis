@@ -44,14 +44,12 @@ console.log(arr);
 document.write(arr);
 
 function addNumbers(a, b) {
-    return a + b;
-    
-    }
-    var a = prompt("First number: ");
-    var b = prompt("Second number: ");
-    a = Number(a);
-    b = Number(b);
-    if (a+b > 100) { alert("Too big!");
-    document.write("<h2>Sum Calculation</h2>");
-    document.write("<p>" + a + " + " + b + " = <strong>" + (a+b) + "</strong></p>"); }
-    console.log(addNumbers(a, b));
+return a + b;}
+var a = prompt("First number: ");
+var b = prompt("Second number: ");
+a = Number(a);
+b = Number(b);
+if (a+b > 100) { alert("Too big!");
+document.write("<h2>Sum Calculation</h2>");
+document.write("<p>" + a + " + " + b + " = <strong>" + (a+b) + "</strong></p>"); }
+console.log(addNumbers(a, b));
