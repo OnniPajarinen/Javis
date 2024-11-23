@@ -41,6 +41,50 @@ function showTable() {
             document.write("</tr>");
 }
 
-function Geolocation() {
-    alert(GeolocationCoordinates)
+function checkGeolocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+}
+
+function showPosition(position) {
+
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    console.log("Latitude: " + latitude);
+    console.log("Longitude: " + longitude);
+    document.write("Latitude: " + latitude);
+    document.write("<br>Longitude: " + longitude);
+}
+
+function Mousie() {
+    console.log("Stepped over my a mouse!")
+}
+
+function Muusie() {
+    window.alert("Bye bye mouse!")
+}
+
+function teksi() {
+    document.getElementById("textdata").value = "Please fill in the form with proper data.";
+}
+
+function counter() {
+    keypressCount++;
+    document.getElementById("textdata").innerHTML = keypressCount;
+}
+
+function nyt() {
+    document.getElementById("textdata").value = "Done!"
+}
+
+function okei(event) {
+    
+    const x = event;
+    const y = event;
+
+    console.log(`Mouse Coordinates: X: ${x}, Y: ${y}`);
+
+    document.getElementById("coordinates").innerHTML = `Coordinates: X: ${x}, Y: ${y}`;
 }
