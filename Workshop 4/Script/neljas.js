@@ -123,3 +123,13 @@ function remove() {
     document.getElementById("carimage").style.display = "none"
 }
 
+function insertRows() {
+    var table = document.getElementById("data")
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    cell1.innerHTML = document.getElementById("textfield").value;
+    cell2.innerHTML = document.getElementById("textfield2").value;
+    cell3.innerHTML = document.getElementById("textfield3").value;
+}
