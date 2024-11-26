@@ -28,51 +28,51 @@ document.getElementById("theForm").addEventListener("submit", function(event){
     const years = document.getElementById("years").value;
     const cost = document.getElementById("cost");
 
-    if (type === "platinum" || years === 1) {
+    if (type === "platinum" && years === 1) {
         const plat = 25 * years;
         cost.innerHTML = `Total cost: $${plat}`;
     } 
-    else if (type === "gold" || years === 1) {
+    else if (type === "gold" && years === 1) {
         const gold = 20 * years;
         cost.innerHTML = `Total cost: $${gold}`;
     }
-    else if (type === "premium" || years === 1) {
+    else if (type === "premium" && years === 1) {
         const premium = 15 * years;
         cost.innerHTML = `Total cost: $${premium}`;
     } 
-    else if (type === "basic" || years === 1) {
+    else if (type === "basic" && years === 1) {
         const basic = 10 * years;
         cost.innerHTML = `Total cost: $${basic}`;
     } 
-    else if (type === "platinum" || years => 2) {
+    else if (type === "platinum" && years >= 2) {
         const plat = (25 * years)*0.8;
         cost.innerHTML = `Total cost: $${plat}`;
     } 
-    else if (type === "gold" || years => 2) {
+    else if (type === "gold" && years >= 2) {
         const gold = (20 * years)*0.8;
         cost.innerHTML = `Total cost: $${gold}`;
     }
-    else if (type === "premium" || years => 2) {
+    else if (type === "premium" && years >= 2) {
         const premium = (15 * years)*0.8;
         cost.innerHTML = `Total cost: $${premium}`;
     } 
-    else if (type === "basic" || years => 2) {
+    else if (type === "basic" && years >= 2) {
         const basic = (10 * years)*0.8;
         cost.innerHTML = `Total cost: $${basic}`;
     } 
-    else if (type === "platinum" || years => 5) {
+    else if (type === "platinum" && years >= 5) {
         const plat = ((25 * years)*0.8)-5;
         cost.innerHTML = `Total cost: $${plat}`;
     } 
-    else if (type === "gold" || years => 5) {
+    else if (type === "gold" && years >= 5) {
         const gold = ((20 * years)*0.8)-5;
         cost.innerHTML = `Total cost: $${gold}`;
     }
-    else if (type === "premium" || years => 5) {
+    else if (type === "premium" && years >= 5) {
         const premium = ((15 * years)*0.8)-5;
         cost.innerHTML = `Total cost: $${premium}`;
     } 
-    else if (type === "basic" || years => 5) {
+    else if (type === "basic" && years >= 5) {
         const basic = ((10 * years)*0.8)-5;
         cost.innerHTML = `Total cost: $${basic}`;
     } 
