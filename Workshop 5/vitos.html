@@ -10,34 +10,20 @@
 <body>
     <h1>Workshop 5: Smart Forms</h1>
     <hr />
-    <p>In this exercise we will practice the art of Smart Forms handling. Use the lecture-material as a reference guide
-        side by side these exercises. It might also be a good idea to save the lines of code you write during the
-        exercises for later use. </p>
 
-    <hr />
     <h2>Exercise 1: Contact Form</h2>
-    <p data-line="4">Below you see a simple contact form which has fields for email address and comments.</p>
-    <p data-line="6">a) Write JavaScript code which checks the input fields when the form submit-button is clicked.
-        Display the entered values with alert -dialogs. Use onsubmit-event on the form tag. Make sure that your code
-        cancels the submission of the form if needed. Hint: See the PowerPoint -slides.</p>
-    <p data-line="8">b) Enhance the code and write if-statements to check the following: the length of email address
-        should be atleast 6 and less than 15. It should also have a @ - character. Check also that the comment field is
-        not be empty and the content should be trimmed down to 50 characters. Utilize JavaScript <a
-            href="http://www.w3schools.com/js/js_string_methods.asp" target="_blank">String-methods</a>.</p>
-    <p data-line="12">c) Should an error occur, highlight the erroneous field and provide some feedback to the user.
-        Preferably by displaying some text message on the page, next to the input field. See the lecture slides for
-        demo.</p>
-    <form onsubmit="">
-        <div class="no-border">
+   
+    <form id="formi">
+        <div class="no-border" id="nyty">
             <label>Email address:<br>
-                <input type="text" name="email">
+                <input type="text" name="email" id="sahko">
             </label>
         </div>
-        <div class="no-border">
+        <div class="no-border" id="nyt">
             <label>
                 Comment:<br>
             </label>
-            <textarea name="comment"></textarea>
+            <textarea name="comment" id="kommentti"></textarea>
         </div>
         <br>
         <input type="submit" value="Send">

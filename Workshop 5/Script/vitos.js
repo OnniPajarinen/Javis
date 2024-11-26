@@ -1,6 +1,54 @@
+document.getElementById("formi").addEventListener("submit", function(event) {
+    const email = document.getElementById("sahko").value;
+    const comment = document.getElementById("kommentti").value;
+    const warning = document.getElementById("nyty");
+    const warging = document.getElementById("nyt");
+
+    if (email === "" || email.length < 6 || email.length > 15 || !email.includes("@")) {
+        event.preventDefault();
+        alert("Email must be in between 6 and 15 characters long and include @!");
+        warning.style.color = "red";
+    } 
+    else if (comment === "") {
+        event.preventDefault();
+        alert("Comment cannot be empty!") 
+        warging.style.color = "red";}
+
+    else if (comment.length > 50) {
+    alert("Comment cannot be over 50 characters!") 
+    warging.style.color = "red";
+    }
+    else {
+        alert("The form was submitted!")
+    }
+});
+
+document.getElementById("theForm").addEventListener("submit", function(event){
+    const type = document.getElementById("type").value;
+    const years = document.getElementById("years").value;
+    const cost = document.getElementById("cost");
+
+    if (type === "platinum") {
+        const plat = 25 * years;
+        cost.innerHTML = `Total cost: $${plat}`;
+    } 
+    else if (type === "gold") {
+        const gold = 20 * years;
+        cost.innerHTML = `Total cost: $${gold}`;
+    }
+    else if (type === "premium") {
+        const prem = 15 * years;
+        cost.innerHTML = `Total cost: $${prem}`;
+    } 
+    else if (type === "basic") {
+        const basic = 10 * years;
+        cost.innerHTML = `Total cost: $${basic}`;
+    } 
+})
+
+
 // shopping.js
 // This script calculates an order total.
-
 // Function called when the form is submitted.
 // Function performs the calculation and returns false.
 function calculate() {
