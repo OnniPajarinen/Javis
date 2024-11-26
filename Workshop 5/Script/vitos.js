@@ -75,6 +75,7 @@ document.getElementById("theForm").addEventListener("submit", function(event){
     else if (type === "basic" && years >= 5) {
         const basic = ((10 * years)*0.8)-5;
         cost.innerHTML = `Total cost: $${basic}`;
+        <p>You got a 20% discount!</p>
     } 
 })
 
