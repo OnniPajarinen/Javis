@@ -27,6 +27,7 @@ document.getElementById("theForm").addEventListener("submit", function(event){
     const type = document.getElementById("type").value;
     const years = document.getElementById("years").value;
     const cost = document.getElementById("cost");
+    const discountMessage = document.getElementById("discount-message");
 
     if (type === "platinum" && years === 1) {
         const plat = 25 * years;
@@ -46,36 +47,43 @@ document.getElementById("theForm").addEventListener("submit", function(event){
     } 
     else if (type === "platinum" && years >= 2) {
         const plat = (25 * years)*0.8;
-        cost.innerHTML = `Total cost: $${plat}`;
+        cost.innerHTML = `Total cost: $${plat}`;        discountMessage.innerHTML = "You are eligible for a 20% discount!";
+
     } 
     else if (type === "gold" && years >= 2) {
         const gold = (20 * years)*0.8;
-        cost.innerHTML = `Total cost: $${gold}`;
+        cost.innerHTML = `Total cost: $${gold}`;        discountMessage.innerHTML = "You are eligible for a 20% discount!";
+
     }
     else if (type === "premium" && years >= 2) {
         const premium = (15 * years)*0.8;
-        cost.innerHTML = `Total cost: $${premium}`;
+        cost.innerHTML = `Total cost: $${premium}`;        discountMessage.innerHTML = "You are eligible for a 20% discount!";
+
     } 
     else if (type === "basic" && years >= 2) {
         const basic = (10 * years)*0.8;
         cost.innerHTML = `Total cost: $${basic}`;
+        discountMessage.innerHTML = "You are eligible for a 20% discount!";
     } 
     else if (type === "platinum" && years >= 5) {
         const plat = ((25 * years)*0.8)-5;
         cost.innerHTML = `Total cost: $${plat}`;
+        discountMessage.innerHTML = "You are eligible for a 20% discount and $5 off!";
     } 
     else if (type === "gold" && years >= 5) {
         const gold = ((20 * years)*0.8)-5;
         cost.innerHTML = `Total cost: $${gold}`;
+        discountMessage.innerHTML = "You are eligible for a 20% discount and $5 off!";
     }
     else if (type === "premium" && years >= 5) {
         const premium = ((15 * years)*0.8)-5;
         cost.innerHTML = `Total cost: $${premium}`;
+        discountMessage.innerHTML = "You are eligible for a 20% discount and $5 off!";
     } 
     else if (type === "basic" && years >= 5) {
         const basic = ((10 * years)*0.8)-5;
         cost.innerHTML = `Total cost: $${basic}`;
-        <p>You got a 20% discount!</p>
+        discountMessage.innerHTML = "You are eligible for a 20% discount and $5 off!";
     } 
 })
 
