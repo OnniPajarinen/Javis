@@ -23,94 +23,31 @@ document.getElementById("formi").addEventListener("submit", function(event) {
     }
 });
 
-document.getElementById("theForm").addEventListener("submit", function(event){
+document.getElementById("theForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
     const type = document.getElementById("type").value;
-    const years = document.getElementById("years").value;
+    const years = parseInt(document.getElementById("years").value, 10);
     const cost = document.getElementById("cost");
     const discountMessage = document.getElementById("discount-message");
+    
 
-    if (type === "platinum" && years === 1) {
-        const plat = 25 * years;
-        cost.innerHTML = `Total cost: $${plat}`;
-        event.preventDefault();
-    } 
-    else if (type === "gold" && years === 1) {
-        const gold = 20 * years;
-        cost.innerHTML = `Total cost: $${gold}`;
-        event.preventDefault();
+    if (type === "platinum") baseRate = 25;
+    else if (type === "gold") baseRate = 20;
+    else if (type === "premium") baseRate = 15;
+    else if (type === "basic") baseRate = 10;
+
+
+    if (years >= 2 && years < 5) {
+        totalCost *= 0.8;
+        discountMessage.innerHTML = "You are eligible for a 20% discount!";
+    } else if (years >= 5) {
+        totalCost = (totalCost * 0.8) - 5;
+        discountMessage.innerHTML = "You are eligible for a 20% discount and $5 off!";
     }
-    else if (type === "premium" && years === 1) {
-        const premium = 15 * years;
-        cost.innerHTML = `Total cost: $${premium}`;
-        event.preventDefault();
 
-    } 
-    else if (type === "basic" && years === 1) {
-        const basic = 10 * years;
-        cost.innerHTML = `Total cost: $${basic}`;
-        event.preventDefault();
-
-    } 
-    else if (type === "platinum" && years >= 2 && years < 5) {
-        const plat = (25 * years)*0.8;
-        cost.innerHTML = `Total cost: $${plat}`;
-        discountMessage.innerHTML = "You are eligible for a 20% discount!";
-        event.preventDefault();
-
-
-    } 
-    else if (type === "gold" && years >= 2 && years < 5) {
-        const gold = (20 * years)*0.8;
-        cost.innerHTML = `Total cost: $${gold}`;
-        discountMessage.innerHTML = "You are eligible for a 20% discount!";
-        event.preventDefault();
-
-
-    }
-    else if (type === "premium" && years >= 2 && years < 5) {
-        const premium = (15 * years)*0.8;
-        cost.innerHTML = `Total cost: $${premium}`;
-        discountMessage.innerHTML = "You are eligible for a 20% discount!";
-        event.preventDefault();
-
-    } 
-    else if (type === "basic" && years >= 2 && years < 5) {
-        const basic = (10 * years)*0.8;
-        cost.innerHTML = `Total cost: $${basic}`;
-        discountMessage.innerHTML = "You are eligible for a 20% discount!";
-        event.preventDefault();
-
-    } 
-    else if (type === "platinum" && years >= 5) {
-        const plat = ((25 * years)*0.8)-5;
-        cost.innerHTML = `Total cost: $${plat}`;
-        discountMessage.innerHTML = "You are eligible for a 20% discount and $5 off!";
-        event.preventDefault();
-
-    } 
-    else if (type === "gold" && years >= 5) {
-        const gold = ((20 * years)*0.8)-5;
-        cost.innerHTML = `Total cost: $${gold}`;
-        discountMessage.innerHTML = "You are eligible for a 20% discount and $5 off!";
-        event.preventDefault();
-
-    }
-    else if (type === "premium" && years >= 5) {
-        const premium = ((15 * years)*0.8)-5;
-        cost.innerHTML = `Total cost: $${premium}`;
-        discountMessage.innerHTML = "You are eligible for a 20% discount and $5 off!";
-        event.preventDefault();
-
-    } 
-    else if (type === "basic" && years >= 5) {
-        const basic = ((10 * years)*0.8)-5;
-        cost.innerHTML = "Hello!";
-        console.log("Hello!")
-        discountMessage.innerHTML = "You are eligible for a 20% discount and $5 off!";
-        event.preventDefault();
-
-    } 
-})
+    cost.value = `Total cost: $${totalCost.toFixed(2)}`;
+});
 
 
 // shopping.js
