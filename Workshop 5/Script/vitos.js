@@ -57,21 +57,22 @@ document.getElementById("theForm").addEventListener("submit", function(event) {
 function calculate() {
     'use strict';
 
+    console.log("-----------")
     // For storing the order total:
     var total;
 
     // Get references to the form values:
-    var quantity = document.getElementById('quantity').value;
-    var price = document.getElementById('price').value;
-    var tax = document.getElementById('tax').value;
-    var discount = document.getElementById('discount').value;
-    var shipping = document.getElementById('shipping').value;
+    let quantity = parseInt(document.getElementById('quantity').value);
+    let price = parseFloat(document.getElementById('price').value);
+    let tax = parseFloat(document.getElementById('tax').value);
+    let discount = parseFloat(document.getElementById('discount').value);
+    let shipping = parseFloat(document.getElementById('shipping').value);
 
     // Add validation here later!
 
     // Calculate the initial total:
     total = quantity * price;
-    console.log("total before tax: " + total);
+    console.log("Total before tax: " + total);
 
     // Make the tax rate easier to use:
     tax = tax / 100;
@@ -79,17 +80,30 @@ function calculate() {
 
     // Factor in the tax:
     total = total * tax;
-    console.log("total after tax: " + total);
+    console.log("Total after tax: " + total);
 
     // Factor in the discount:
-    if (quantity > 100) {
-        total = total - (2 * discount);
-    } else {
 
-        total = total - discount;
+    if (quantity > 100) {
+        let discount2 = (discount / 100) * 2;
+        discount = 1 - discount2
+        console.log("Discount: " + discount)
+        document.getElementById("discount").value = ((discount + discount2)*10) + " %"
+
+        total = total * discount;
+        console.log("Total: " + total)
+    } else {
+        discount = discount / 100;
+        discount = 1 - discount
+        console.log("Discount: " + discount)
+
+        total = total * discount;
     }
-    total = total + (1.0 * shipping);
-    console.log("total after discount: " + total);
+    console.log("Total after discount: " + total);
+
+    //Factor in the shipping:
+    total = total + shipping
+    console.log("Total after shipping: " + total)
 
     // Format the total to two decimal places:
     total = total.toFixed(2);
@@ -99,6 +113,7 @@ function calculate() {
 
     // Return false to prevent submission:
     return false;
+
 
 } // End of calculate() function.
 
@@ -117,3 +132,29 @@ function init() {
 
 // Assign an event listener to the window's load event:
 window.onload = init;
+
+
+document.getElementById("formula").addEventListener("submit", function(event) {
+    const email = document.getElementById("sukka").value;
+    const comment = document.getElementById("komment").value;
+    const warning = document.getElementById("nyhto");
+    const warging = document.getElementById("nauta");
+
+    if (email === "" || email.length < 6 || email.length > 15 || !email.includes("@")) {
+        event.preventDefault();
+        alert("Email must be in between 6 and 15 characters long and include @!");
+        warning.style.color = "red";
+    } 
+    else if (comment === "") {
+        event.preventDefault();
+        alert("Comment cannot be empty!") 
+        warging.style.color = "red";}
+
+    else if (comment.length > 50) {
+    alert("Comment cannot be over 50 characters!") 
+    warging.style.color = "red";
+    }
+    else {
+        alert("The form was submitted!")
+    }
+});

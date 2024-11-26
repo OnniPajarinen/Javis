@@ -63,15 +63,6 @@
     <p data-line="20">&nbsp;</p>
     <hr />
     <h2>Exercise 3: Book Order</h2>
-    <p data-line="27">In many cases, developer has to maintain and develop code written by someone else. Look at the
-        HTML code and JavaScript code below. Study how does it work and what is the logic behind it.</p>
-    <p data-line="29">Then add following features to the code:</p>
-    <p data-line="31">a) the values read from the text boxes are stored as strings. Modify the code to store the
-        quantity as an integer and the price, tax and discount as floats.</p>
-    <p data-line="33">b) modify the JS code to double the discount applied when the quantity ordered is greater than 100
-        items</p>
-    <p data-line="35">c) modify the HTML form to include a shipping field, and include this value in the total
-        calculation in shopping.js.</p>
     <p>&nbsp;</p>
     <fieldset>
         <p>Calculate a bulk book order.</p>
@@ -81,24 +72,29 @@
         </div>
         <div>
             <label for="price">Price Per Unit</label>
-            <input type="text" name="price" id="price" value="1.00" required>
+            <input type="text" name="price" id="price" value="1 €" required disabled>
         </div>
         <div>
             <label for="tax">VAT (%)</label>
-            <input type="text" name="tax" id="tax" value="0.0" required>
+            <input type="text" name="tax" id="tax" value="10 %" required disabled>
         </div>
         <div>
             <label for="discount">Discount</label>
-            <input type="text" name="discount" id="discount" value="0.00" required>
+            <input type="text" name="discount" id="discount" value="5 %" required disabled>
+        </div>
+        <div>
+            <label for="shipping">Shipping</label>
+            <input type="text" name="shipping" id="shipping" value="5 €" required disabled>
         </div>
         <div>
             <label for="total">Total</label>
-            <input type="text" name="total" id="total" value="0.00">
+            <input type="text" name="total" id="total" value="0.00 €" disabled>
         </div>
         <div>
             <input type="submit" value="Calculate" id="submit-calculate" onClick="calculate()">
         </div>
     </fieldset>
+    <p>&nbsp;</p>
 
     <hr />
     <h2>Exercise 4: Hidden Extra fields</h2>
@@ -112,6 +108,25 @@
                 regarding on the selected contact method.</p>
         </li>
     </ul>
+
+
+    <form id="formula">
+        <div class="no-border" id="nyhto">
+            <label>Email address:<br>
+                <input type="text" name="email" id="sukka">
+            </label>
+        </div>
+        <div class="no-border" id="nauta">
+            <label>
+                Comment:<br>
+            </label>
+            <textarea name="comment" id="komment"></textarea>
+        </div>
+        <br>
+        <input type="submit" value="Send">
+    </form>
+
+
     <script src="Script/vitos.js"></script>
 </body>
 
