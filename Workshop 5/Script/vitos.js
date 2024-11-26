@@ -136,25 +136,50 @@ window.onload = init;
 
 document.getElementById("formula").addEventListener("submit", function(event) {
     const email = document.getElementById("sukka").value;
-    const comment = document.getElementById("komment").value;
-    const warning = document.getElementById("nyhto");
-    const warging = document.getElementById("nauta");
+    const phone = document.getElementById("phone").value;
+    const warging = document.getElementById("ei");
+    const sms = document.getElementById("sms").value;
 
-    if (email === "" || email.length < 6 || email.length > 15 || !email.includes("@")) {
-        event.preventDefault();
-        alert("Email must be in between 6 and 15 characters long and include @!");
-        warning.style.color = "red";
-    } 
-    else if (comment === "") {
-        event.preventDefault();
-        alert("Comment cannot be empty!") 
-        warging.style.color = "red";}
+    if (warging) warging.style.color = "initial";
 
-    else if (comment.length > 50) {
-    alert("Comment cannot be over 50 characters!") 
-    warging.style.color = "red";
+    else if ((sms > 0 && phone > 0) || (sms > 0 && email > 0) || (phone > 0 && email > 0) || (phone == 0 && sms == 0 && phone == 0)) {
+        event.preventDefault();
+        alert("Choose only one contact way!");
+        warging.style.color = "red";
     }
-    else {
-        alert("The form was submitted!")
-    }
+
+    alert("The contact request was submitted!");
+    console.log("Email:", email);
+    console.log("Phone:", phone);
+    console.log("SMS:", sms);
 });
+
+function milk() {
+    var checkBox = document.getElementById("myCheck1");
+    var text = document.getElementById("nyhto");
+    if (checkBox.checked == true){
+      text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+  }
+
+  function bali() {
+    var checkBox = document.getElementById("myCheck2");
+    var text = document.getElementById("nauta");
+    if (checkBox.checked == true){
+      text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+  }
+
+  function bail() {
+    var checkBox = document.getElementById("myCheck3");
+    var text = document.getElementById("nuudeli");
+    if (checkBox.checked == true){
+      text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+  }

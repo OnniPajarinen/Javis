@@ -109,20 +109,40 @@
         </li>
     </ul>
 
-
+<h3>What way would you like to be contacted by?:</h3>
     <form id="formula">
-        <div class="no-border" id="nyhto">
-            <label>Email address:<br>
-                <input type="text" name="email" id="sukka">
-            </label>
+
+        <label for="myCheck1" id="ei">Email address:</label> 
+        <input type="checkbox" id="myCheck1" onclick="milk()">
+
+        <div class="no-border" id="nyhto" style="display: none;">
+                <input type="teksti" name="sahkoposti" id="sukka">
         </div>
-        <div class="no-border" id="nauta">
-            <label>
-                Comment:<br>
-            </label>
-            <textarea name="comment" id="komment"></textarea>
-        </div>
+
         <br>
+
+        <label for="myCheck2" id="ei">Phone:</label> 
+        <input type="checkbox" id="myCheck2" onclick="bali()">
+
+        <div class="no-border" id="nauta" style="display: none;">
+            <label>
+                <input type="teksti" name="puhelin" id="phone">
+            </label>
+        </div>
+
+        <br>
+
+        <label for="myCheck3" id="ei">SMS:</label> 
+        <input type="checkbox" id="myCheck3" onclick="bail()">
+
+        <div class="no-border" id="nuudeli" style="display: none;">
+            <label>
+                <input type="teksti" name="sms" id="sms">
+            </label>
+        </div>
+
+        <br>
+
         <input type="submit" value="Send">
     </form>
 
