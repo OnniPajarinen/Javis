@@ -37,8 +37,8 @@ document.getElementById("theForm").addEventListener("submit", function(event){
         cost.innerHTML = `Total cost: $${gold}`;
     }
     else if (type === "premium") {
-        const prem = 15 * years;
-        cost.innerHTML = `Total cost: $${prem}`;
+        const premium = 15 * years;
+        cost.innerHTML = `Total cost: $${premium}`;
     } 
     else if (type === "basic") {
         const basic = 10 * years;
