@@ -73,8 +73,7 @@ function loadAndParseNews(fiidi) {
 
             document.getElementById("newsfeed").innerHTML = output;
         } else if (xmlhttp.readyState == 4) {
-            document.getElementById("newsfeed").innerHTML =
-                "<p>Ei toimi! Pääsy hylätty linkkeihin, mutta koodini löytyy!</p>";
+            document.getElementById("newsfeed").innerHTML = "Ei toimi! Pääsy hylätty linkkeihin, mutta koodini löytyy!";
         }
     };
 }
