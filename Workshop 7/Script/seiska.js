@@ -12,3 +12,23 @@ function parseData() {
     document.getElementById("output").innerHTML = output;
 }
 
+function loadXMLFile(){
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("GET", "https://quotes.rest/qod", true);
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("quotes").innerHTML = xmlhttp.responseText
+        }
+        else if (xmlhttp.readyState == 4){
+            document.getElementById("quotes").innerHTML = "Ei toimi! Pääsy hylätty linkkeihin, mutta koodini löytyy!";
+        }
+    
+    };
+}
+
+function loadAndParseXML() {
+
+}
