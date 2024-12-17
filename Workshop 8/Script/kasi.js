@@ -20,3 +20,30 @@ var joo = JSON.parse(text);
 
     document.getElementById("jsondata").innerHTML = result;
 }
+
+function first() {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("GET", "http://www.omdbapi.com/?s=star+wars&apikey=cbbc6750", true);    
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("rawdata").innerHTML = xmlhttp.responseText
+        }
+    };
+}
+
+function second() {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("GET", "http://www.omdbapi.com/?s=star+wars&apikey=cbbc6750", true);    
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var nyt = JSON.parse(xmlhttp.responseText)
+            document.getElementById("rawdata").innerHTML = nyt
+        }
+    };
+}
