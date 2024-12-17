@@ -1,0 +1,7 @@
+function eka(){
+
+}
+
+function toka(){
+    
+}
