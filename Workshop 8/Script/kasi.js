@@ -6,7 +6,7 @@ var text = '{ "employees" : [' +
 
 
 function toka(){
-    document.getElementById("omg").innerHTML = text
+    document.getElementById("jsondata").innerHTML = text
 }
 
 function eka() {
@@ -18,5 +18,5 @@ var joo = JSON.parse(text);
         result += employee.firstName +" "+ employee.lastName + "<br>";
     });
 
-    document.getElementById("omg").innerHTML = result;
+    document.getElementById("jsondata").innerHTML = result;
 }
