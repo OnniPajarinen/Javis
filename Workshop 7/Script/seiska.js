@@ -15,8 +15,9 @@ function parseData() {
 function loadXMLFile(){
     var xmlhttp = new XMLHttpRequest();
 
-    xmlhttp.open("GET", "http://quotes.rest/qod.xml", true);
+    xmlhttp.open("GET", "http://quotes.rest/quote/random.json?api_key=<xQy6XHupBMKzh72aQyfdLbjHCG01AOtfMx1s2ATe1b41bb7d>", true);    
     xmlhttp.send();
+    
 
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
