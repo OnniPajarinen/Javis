@@ -9,11 +9,14 @@ function toka(){
     document.getElementById("omg").innerHTML = text
 }
 
-function eka(){
-    var joo = JSON.parse(text);
-console.log(joo.employees);
+function eka() {
+var joo = JSON.parse(text);
+    
+    var result = "";
 
-joo.employees.forEach(function(employee) {
-    console.log("First Name: " + employee.firstName + ", Last Name: " + employee.lastName);
-});
+    joo.employees.forEach(function(employee) {
+        result += employee.firstName +" "+ employee.lastName + "<br>";
+    });
+
+    document.getElementById("omg").innerHTML = result;
 }
