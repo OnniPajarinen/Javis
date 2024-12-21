@@ -64,7 +64,7 @@
             <select name="mySelect" id="mySelect" onchange="nonyt()">
                 <option value="first">News</option>
                 <option value="second">Titles</option>
-                <option value="third">Pictures</option>
+                <option value="third">Descriptions</option>
             </select>
         </p>
         <div id="ajax" style="border: 1px solid black; width: 400px;">
@@ -104,7 +104,6 @@
             $(response).find("item").each(function() {
                 var title = $(this).find("title").text();
                 var link = $(this).find("link").text();
-                var imgUrl = $(this).find("enclosure").attr("url");
                 var description = $(this).find("description").text();
 
                     if (selectedOption === "first") {
